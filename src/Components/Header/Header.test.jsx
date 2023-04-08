@@ -5,7 +5,7 @@ describe("Header tests", () => {
   it("Renders header title", () => {
     render(<Header />);
     const header = screen.getByRole("header", {
-      name: "Neko Cat",
+      name: "Maru Mart",
     });
     expect(header).toBeInTheDocument();
   });
