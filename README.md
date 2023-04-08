@@ -23,3 +23,21 @@ Notes on constructing the Redux Store:
     - Create an action that will trigger when the active category is changed.
       - HINT: Multiple reducers can respond to the same actions.
     - Create a reducer that will filter the products list based on the active category.
+
+### Lab 37: Redux - Combined Reducers
+**Phase 2 Requirements**:
+
+The user stories from Phase 1 remain unchanged. For this phase, we are now adding the following new user stories to meet the new requirements.
+
+- As a user, I want to choose from products in the list and add them to my shopping cart.
+- As a user, I want to see the products that I’ve added to my shopping cart in a growing list on the side of the page”.
+- As a user, I want to change the quantity of items I intend to purchase in the header. i.e. CART (1)
+- As a user, I want to be able to remove an item from my shopping cart.
+
+Manage state in Redux store with multiple reducers/actions:
+
+- Cart
+    - State should be an array of products that have been added (all product details).
+    - Create an action that will trigger the reducer to add the selected item to the cart.
+      - Hint: this could be the same action type as you create for the Products reducer.
+    - Create a reducer that adds the product to the array of items in state.
