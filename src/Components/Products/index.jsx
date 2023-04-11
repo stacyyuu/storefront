@@ -1,5 +1,6 @@
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { useDispatch } from "react-redux";
 import cartSlice from "../../store/cart";
@@ -17,6 +18,12 @@ const Products = ({ product }) => {
             <Typography gutterBottom variant="h5" component="div">
               {product.name}
             </Typography>
+            <CardMedia
+              component="img"
+              height="195"
+              image={product.image}
+              alt={product.name}
+            />
             <Typography variant="body2" color="text.secondary">
               <p>Price: ${product.price}</p>
               <p>In Stock: {product.inStock}</p>
