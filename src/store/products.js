@@ -1,13 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
+import apples from './imgs/apples.jpg';
+import bread from './imgs/bread.jpg'
+import eggs from './imgs/eggs.jpg'
+import radio from './imgs/radio.jpg'
+import socks from './imgs/socks.jpg'
+import tv from './imgs/TV.jpg'
+import shirt from './imgs/shirt.jpg'
 
 const PRODUCTS = [
-  { name: "TV", category: "electronics", price: 699.0, inStock: 5 },
-  { name: "Radio", category: "electronics", price: 99.0, inStock: 15 },
-  { name: "Shirt", category: "clothing", price: 9.0, inStock: 25 },
-  { name: "Socks", category: "clothing", price: 12.0, inStock: 10 },
-  { name: "Apples", category: "food", price: 0.99, inStock: 500 },
-  { name: "Eggs", category: "food", price: 1.99, inStock: 12 },
-  { name: "Bread", category: "food", price: 2.39, inStock: 90 },
+  { name: "TV", category: "electronics", price: 699.0, inStock: 5, image: tv},
+  { name: "Radio", category: "electronics", price: 99.0, inStock: 15, image: radio },
+  { name: "Shirt", category: "clothing", price: 9.0, inStock: 25, image: shirt },
+  { name: "Socks", category: "clothing", price: 12.0, inStock: 10, image: socks },
+  { name: "Apples", category: "food", price: 0.99, inStock: 500, image: apples },
+  { name: "Eggs", category: "food", price: 1.99, inStock: 12, image: eggs },
+  { name: "Bread", category: "food", price: 2.39, inStock: 90, image: bread },
 ];
 
 const productSlice = createSlice({
