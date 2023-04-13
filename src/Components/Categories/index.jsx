@@ -1,10 +1,17 @@
 import Products from "../Products";
-import { filteredProducts } from "../../store/products";
-import { useSelector } from "react-redux";
+import { displayProducts, filteredProducts } from "../../store/products";
+import { useSelector, useDispatch } from "react-redux";
 import Grid from "@mui/material/Unstable_Grid2";
+import { useEffect } from "react";
 
 const Categories = () => {
   const products = useSelector(filteredProducts);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(displayProducts());
+  }, []);
+
   return (
     <>
       <Grid container spacing={2} sx={{ my: 2 }}>

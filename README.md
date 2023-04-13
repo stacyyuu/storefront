@@ -41,3 +41,21 @@ Manage state in Redux store with multiple reducers/actions:
     - Create an action that will trigger the reducer to add the selected item to the cart.
       - Hint: this could be the same action type as you create for the Products reducer.
     - Create a reducer that adds the product to the array of items in state.
+
+
+### Lab 38: Redux - Asynchronous Actions
+**Phase 3 Requirements**:
+
+In phase 3, we will be connecting our Virtual Store to a live API so that our data is persistent and able to be separately managed.
+
+The user stories from Phases 1 and 2 remain unchanged. For this phase, we are now adding the following new user stories to meet the new requirements.
+
+- As a user, I want to interact with live inventory so that I have confidence that the displayed products are in stock.
+- As a user, I want to know to that when I add an item to my cart, that it is removed from inventory so that no other users can purchase it.
+
+
+ ![React Store](https://d33wubrfki0l68.cloudfront.net/08d01ed85246d3ece01963408572f3f6dfb49d41/4bc12/assets/images/reduxasyncdataflowdiagram-d97ff38a0f4da0f327163170ccc13e80.gif)  
+
+ 
+
+  

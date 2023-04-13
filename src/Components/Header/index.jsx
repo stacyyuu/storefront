@@ -7,10 +7,12 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import cat from "./pet.png";
-import { categories } from "../../store/categories/index";
+// import { displayCategories } from "../../store/categories";
 import { useDispatch, useSelector } from "react-redux";
 import productSlice from "../../store/products";
 import SimpleCart from "../SimpleCart";
+// import { useEffect } from "react";
+import {categories} from '../../store/categories/index'
 
 const Header = () => {
   const [open, setOpen] = React.useState(false);
@@ -20,6 +22,14 @@ const Header = () => {
   const items = useSelector((state) => {
     return state.cart;
   });
+
+  // const categories = useSelector((state) => {
+  //   return state.categories;
+  // });
+
+  // useEffect(() => {
+  //   dispatch(displayCategories());
+  // }, []);
 
   return (
     <AppBar position="static" sx={{ backgroundColor: "#b9ac9f" }}>
