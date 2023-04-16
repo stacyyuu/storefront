@@ -1,14 +1,21 @@
 import "./App.css";
-import Categories from "./Components/Categories";
-import Footer from "./Components/Footer";
-import Header from "./Components/Header/index";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Storefront from "./Components/Storefront";
+import Error from "./Components/Error";
+import Layout from "./Components/Layout";
+import ProductDetails from "./Components/ProductDetails";
 
 const App = () => {
   return (
     <>
-      <Header />
-      <Categories/>
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />} errorElement={<Error />}>
+            <Route path="/" element={<Storefront />} />
+            <Route path="/products/:id" element={<ProductDetails />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };

@@ -1,3 +1,4 @@
+import { ContentPasteSearchOutlined } from "@mui/icons-material";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 // import apples from './imgs/apples.jpg';
 // import bread from './imgs/bread.jpg';
@@ -17,19 +18,19 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 //   { name: "Bread", category: "food", price: 2.39, inStock: 90, image: bread },
 // ];
 
-export const displayProducts = createAsyncThunk('products/getall', async () => {
-  const response = await fetch(process.env.REACT_APP_API + '/products');
+export const displayProducts = createAsyncThunk("products/getall", async () => {
+  const response = await fetch(process.env.REACT_APP_API + "/products");
   const json = await response.json();
 
   return json.results;
 });
-
 
 const productSlice = createSlice({
   name: "product",
   initialState: {
     products: [],
     activeCategory: undefined,
+    selectedProduct: {}
   },
   reducers: {
     setActiveCategory: (state, action) => {
@@ -38,7 +39,7 @@ const productSlice = createSlice({
     decreaseStock: (state, action) => {
       const updatedProducts = state.products.map((item) => {
         if (item.name === action.payload) {
-          return { ...item, inStock: item.inStock - 1};
+          return { ...item, inStock: item.inStock - 1 };
         } else {
           return item;
         }
@@ -55,10 +56,12 @@ const productSlice = createSlice({
       });
       state.products = updatedProducts;
     },
+    setProduct: (state, action) => {
+      state.selectedProduct = state.product[action.payload];
+    }
   },
   extraReducers: (builder) => {
-    builder
-    .addCase(displayProducts.fulfilled, (state, {payload}) => {
+    builder.addCase(displayProducts.fulfilled, (state, { payload }) => {
       state.products = payload;
     });
   },
